@@ -1,8 +1,9 @@
 :root {
   --main-background-color: #ffffff;
   --section-background-color: #2f303a;
+  --hero-background-color: #c4c4c4;
   --list-background-color: #f5f4fa;
-  --footer-socials-background: rgba(255, 255, 255, 0.1); 
+  --footer-socials-background: rgba(255, 255, 255, 0.1);
 
   --title-color: #212121;
   --desc-color: #757575;
@@ -15,12 +16,15 @@
   --border-header-color: #ececec;
   --social-icon-color: #afb1b8;
 
+  --hero-linear-gradient: rgba(47, 48, 58, 0.4);
+
   --shadow-img: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   --shadow-btn: rgba(0, 0, 0, 0.15);
   --shadow-filter-btn: 0px 3px 1px rgba(0, 0, 0, 0.1),
     0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-    --shadow-projects-item: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  --shadow-projects-item: 0px 1px 1px rgba(0, 0, 0, 0.12),
+    0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 body {
@@ -125,7 +129,8 @@ p {
 }
 
 .header-contacts .contacts {
-  display: block;
+  display: flex;
+  align-items: center;
   padding-top: 32px;
   padding-bottom: 32px;
 
@@ -133,6 +138,15 @@ p {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
+}
+
+.header-contacts .contacts .icon {
+  margin-right: 10px;
+  fill: var(--desc-color);
+}
+
+a.contacts:hover .icon {
+  fill: var(--accent-color);
 }
 
 a.contacts:hover,
@@ -143,9 +157,21 @@ a.contacts:focus {
 /* Hero section */
 
 .hero {
+  max-width: 1600px;
+  min-height: 600px;
   padding: 200px 0;
+  margin-right: auto;
+  margin-left: auto;
 
-  background-color: var(--section-background-color);
+  background-image: linear-gradient(
+      var(--hero-linear-gradient),
+      var(--hero-linear-gradient)
+    ),
+    url("../images/hero-banner.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-color: var(--hero-background-color);
   text-align: center;
 }
 
@@ -354,26 +380,26 @@ a.contacts:focus {
   height: 92px;
 
   border: 1px solid var(--social-icon-color);
-border-radius: 4px;
+  border-radius: 4px;
 
-fill: var(--social-icon-color);
+  fill: var(--social-icon-color);
 }
 
 .clients-list .client-icon:hover,
 .clients-list .client-icon:focus {
-    fill: var(--accent-color);
-    border: 1px solid var(--accent-color);
+  fill: var(--accent-color);
+  border: 1px solid var(--accent-color);
 }
 
 /* Footer section */
 
 .footer {
-   background-color: var(--section-background-color);
+  background-color: var(--section-background-color);
   line-height: 1.71;
 }
 
 .footer .footer-container {
-display: flex;
+  display: flex;
 }
 
 .footer-logo {
@@ -386,7 +412,7 @@ display: flex;
   padding-bottom: 60px;
 
   width: 231px;
-    margin-right: 70px;;
+  margin-right: 70px;
 }
 
 .footer .footer-logo,
@@ -411,14 +437,14 @@ address {
   color: var(--secondary-white-color);
 }
 
-.item-socials{
+.item-socials {
   padding-top: 72px;
   padding-bottom: 100px;
 }
 
 .item-socials .socials-list {
-display: flex;
-gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .socials-list .list-icon {
@@ -439,15 +465,15 @@ gap: 10px;
 }
 
 .title-socials {
-    margin-top: 0;
-    margin-bottom: 20px;
-  
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.14;
-    text-transform: uppercase;
- 
-    color: var(--white-color)
+  margin-top: 0;
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+
+  color: var(--white-color);
 }
 
 /* SCC for portfolio.html */

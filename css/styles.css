@@ -2,6 +2,7 @@
   --main-background-color: #ffffff;
   --section-background-color: #2f303a;
   --list-background-color: #f5f4fa;
+  --footer-socials-background: rgba(255, 255, 255, 0.1); 
 
   --title-color: #212121;
   --desc-color: #757575;
@@ -12,12 +13,14 @@
   --dark-logo-color: #000000;
   --border-project-color: #eeeeee;
   --border-header-color: #ececec;
+  --social-icon-color: #afb1b8;
 
   --shadow-img: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   --shadow-btn: rgba(0, 0, 0, 0.15);
   --shadow-filter-btn: 0px 3px 1px rgba(0, 0, 0, 0.1),
     0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    --shadow-projects-item: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 body {
@@ -214,19 +217,15 @@ a.contacts:focus {
   flex-basis: calc((100% - 90px) / 4);
 }
 
-.benefits-icon {
-  display: flex;
-  justify-content: center;
+.item .benefits-icon {
+  width: 270px;
+  height: 120px;
+  padding: 25px 100px;
+  margin-bottom: 30px;
+  border-radius: 4px;
 
-width: 270px;
-height: 120px;
-margin-bottom: 30px;
-border-radius: 4px;
-
-background: var(--list-background-color);
+  background: var(--list-background-color);
 }
-
-
 
 .benefits-title {
   margin-top: 0;
@@ -309,24 +308,85 @@ background: var(--list-background-color);
 }
 
 .team-desc {
+  margin-bottom: 16px;
   color: var(--desc-color);
   font-size: 16px;
   line-height: 1.19;
 }
 
+.team-social {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.team-social .list-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+
+  fill: var(--social-icon-color);
+}
+
+.team-social .list-icon:hover,
+.team-social .list-icon:focus {
+  background: var(--accent-color);
+  border-radius: 50%;
+
+  fill: var(--white-color);
+}
+
+/* Our clients */
+
+.clients-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.clients-list .client-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 92px;
+
+  border: 1px solid var(--social-icon-color);
+border-radius: 4px;
+
+fill: var(--social-icon-color);
+}
+
+.clients-list .client-icon:hover,
+.clients-list .client-icon:focus {
+    fill: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
 /* Footer section */
 
 .footer {
-  padding-top: 60px;
-  padding-bottom: 60px;
-
-  background-color: var(--section-background-color);
+   background-color: var(--section-background-color);
   line-height: 1.71;
+}
+
+.footer .footer-container {
+display: flex;
 }
 
 .footer-logo {
   display: block;
   margin-bottom: 20px;
+}
+
+.footer-container .item-address {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  width: 231px;
+    margin-right: 70px;;
 }
 
 .footer .footer-logo,
@@ -349,6 +409,45 @@ address {
 
 .footer-contacts .contacts {
   color: var(--secondary-white-color);
+}
+
+.item-socials{
+  padding-top: 72px;
+  padding-bottom: 100px;
+}
+
+.item-socials .socials-list {
+display: flex;
+gap: 10px;
+}
+
+.socials-list .list-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+
+  background: var(--footer-socials-background);
+  border-radius: 50%;
+  fill: var(--white-color);
+}
+
+.socials-list .list-icon:hover,
+.socials-list .list-icon:focus {
+  background: var(--accent-color);
+}
+
+.title-socials {
+    margin-top: 0;
+    margin-bottom: 20px;
+  
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+ 
+    color: var(--white-color)
 }
 
 /* SCC for portfolio.html */
@@ -419,6 +518,11 @@ address {
   margin-left: 30px;
   margin-top: 30px;
 } */
+
+.projects-item:hover,
+.projects-item:focus {
+  box-shadow: var(--shadow-projects-item);
+}
 
 .project-title {
   margin-bottom: 4px;

@@ -214,6 +214,20 @@ a.contacts:focus {
   flex-basis: calc((100% - 90px) / 4);
 }
 
+.benefits-icon {
+  display: flex;
+  justify-content: center;
+
+width: 270px;
+height: 120px;
+margin-bottom: 30px;
+border-radius: 4px;
+
+background: var(--list-background-color);
+}
+
+
+
 .benefits-title {
   margin-top: 0;
   margin-bottom: 10px;
